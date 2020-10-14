@@ -1,0 +1,13 @@
+node_modules
+src/img/background.8519a420.png
+package-lock.json
+.cache/51/175c26f91ed8a156e6131c1309579b.json
+.cache/6b/e5d9bd638b32fb14a2ca2c445b0588.json
+.cache/cc/44147084d3bd4e87116c3b7de82a5e.json
+.cache/e3/a6e4cc38b29086376b32f08f806338.json
+dist/index.html
+dist/index.js
+dist/index.js.map
+dist
+cache
+.cache
