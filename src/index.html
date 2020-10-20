@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="index.css" />
+		<link rel="stylesheet" href="game.css" />
 		<title>Document</title>
 	</head>
 	<body>
@@ -93,7 +94,201 @@
 				</div>
 			</div>
 		</div>
+		<div class="game" style="display: none">
+			<div class="game-area">
+				<div class="header">
+					<div id="logo-container">
+						<a href="/"><div id="logo">Logo</div></a>
+					</div>
+				</div>
+				<div class="board-n-hud">
+					<div id="game-details"></div>
+					<ul id="player-list" style="min-height: 0px">
+						<li>
+							<div class="player-details">
+								<span class="player-name">Wandering Flamingo</span>
+								<span class="player-score">0 points</span>
+							</div>
+							<span class="player-rank" style="color: #ffd700">#1</span>
+						</li>
+						<li>
+							<div class="player-details">
+								<span class="player-name">Wandering Flamingo</span>
+								<span class="player-score">0 points</span>
+							</div>
+							<span class="player-rank" style="color: #ffd700 !important"
+								>#1</span
+							>
+						</li>
+						<li>
+							<div class="player-details">
+								<span class="player-name">Wandering Flamingo</span>
+								<span class="player-score">0 points</span>
+							</div>
+							<span class="player-rank" style="color: #ffd700 !important"
+								>#1</span
+							>
+						</li>
+						<li>
+							<div class="player-details">
+								<span class="player-name">Wandering Flamingo</span>
+								<span class="player-score">0 points</span>
+							</div>
+							<span class="player-rank" style="color: #ffd700 !important"
+								>#1</span
+							>
+						</li>
+						<li>
+							<div class="player-details">
+								<span class="player-name">Wandering Flamingo</span>
+								<span class="player-score">0 points</span>
+							</div>
+							<span class="player-rank" style="color: #ffd700 !important"
+								>#1</span
+							>
+						</li>
+						<li>
+							<div class="player-details">
+								<span class="player-name">Wandering Flamingo</span>
+								<span class="player-score">0 points</span>
+							</div>
+							<span class="player-rank" style="color: #ffd700 !important"
+								>#1</span
+							>
+						</li>
+						<li>
+							<div class="player-details">
+								<span class="player-name">Wandering Flamingo</span>
+								<span class="player-score">0 points</span>
+							</div>
+							<span class="player-rank" style="color: #ffd700 !important"
+								>#1</span
+							>
+						</li>
+						<li>
+							<div class="player-details">
+								<span class="player-name">Wandering Flamingo</span>
+								<span class="player-score">0 points</span>
+							</div>
+							<span class="player-rank" style="color: #ffd700 !important"
+								>#1</span
+							>
+						</li>
+					</ul>
+					<div id="board">
+						<div class="current-word"></div>
+						<div class="game-canvas">
+							<div style="display: none"></div>
+							<canvas
+								id="canvas"
+								width="800"
+								height="600"
+								oncontextmenu="return false"
+							></canvas>
+						</div>
+					</div>
+					<div class="chat-n-tools">
+						<div id="tools">
+							<div id="game-slider">
+								<input
+									type="range"
+									min="4"
+									max="36"
+									value="18"
+									step="0.5"
+									id="color-preview"
+								/>
+								<div class="tooltip">
+									<div class="tooltip-inner">
+										<div class="tooltip-preview">
+											<div></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="colors-choose">
+								<div class="colors-row">
+									<div class="color" style="background: #fff"></div>
+									<div class="color" style="background: #d3d1d2"></div>
+									<div class="color" style="background: #f70f0f"></div>
+									<div class="color" style="background: #ff7200"></div>
+									<div class="color" style="background: #fce700"></div>
+									<div class="color" style="background: #02cb00"></div>
+									<div class="color" style="background: #01fe94"></div>
+									<div class="color" style="background: #05b0ff"></div>
+									<div class="color" style="background: #221ecd"></div>
+									<div class="color" style="background: #a300bd"></div>
+									<div class="color" style="background: #cc7fad"></div>
+									<div class="color" style="background: #fdad88"></div>
+									<div class="color" style="background: #9e5425"></div>
+								</div>
+								<div class="colors-row">
+									<div class="color" style="background: #514f54"></div>
+									<div class="color" style="background: #a9a7a8"></div>
+									<div class="color" style="background: #ae0b00"></div>
+									<div class="color" style="background: #c84706"></div>
+									<div class="color" style="background: #ec9e06"></div>
+									<div class="color" style="background: #007612"></div>
+									<div class="color" style="background: #049d6f"></div>
+									<div class="color" style="background: #00579d"></div>
+									<div class="color" style="background: #0f0b96"></div>
+									<div class="color" style="background: #6e0083"></div>
+									<div class="color" style="background: #a65673"></div>
+									<div class="color" style="background: #e38a5e"></div>
+									<div class="color" style="background: #5e320d"></div>
+								</div>
+								<div class="colors-row">
+									<div class="color black" style="background: #000"></div>
+									<div class="color" style="background: #827c80"></div>
+									<div class="color" style="background: #57060c"></div>
+									<div class="color" style="background: #8b2500"></div>
+									<div class="color" style="background: #9e6600"></div>
+									<div class="color" style="background: #003f00"></div>
+									<div class="color" style="background: #00766a"></div>
+									<div class="color" style="background: #003b75"></div>
+									<div class="color" style="background: #0e0151"></div>
+									<div class="color" style="background: #3c0350"></div>
+									<div class="color" style="background: #73314d"></div>
+									<div class="color" style="background: #d1754e"></div>
+									<div class="color" style="background: #421e06"></div>
+								</div>
+							</div>
+							<div id="clear"></div>
+						</div>
+						<div id="chat">
+							<div class="chat-body">
+								<ul id="chat-list">
+									<li>
+										<font color="gray">Jittery Plankton joined the room!</font>
+									</li>
+									<li>
+										<font color="orange">Free Draw!</font>
+									</li>
+									<li>
+										<font color="orange"
+											>Invite your friends to draw together!</font
+										>
+									</li>
+									<li>
+										<font color="#bbb"><b>Jittery Plankton: </b></font
+										><span>sdfsfsdfs</span>
+									</li>
+								</ul>
+								<input
+									id="chat-input"
+									maxlength="100"
+									autocomplete="off"
+									placeholder="Type your guess/chat here"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script src="User.js"></script>
+		<script src="Tool.js"></script>
 		<script src="index.js"></script>
+		<script src="game.js"></script>
 	</body>
 </html>

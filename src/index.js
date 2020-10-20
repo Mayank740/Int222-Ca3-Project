@@ -1,18 +1,18 @@
 /* eslint-disable no-undef */
 const input = document.querySelector('#nick');
-const colors = document.querySelectorAll('.accent');
+const accents = document.querySelectorAll('.accent');
 const playbtn = document.querySelector('#play');
 const createbtn = document.querySelector('#create-new');
 
 /* eslint-enable no-undef*/
-console.log(colors);
+console.log(accents);
 input.focus();
-const user = new User('', 'white');
-colors.forEach((color) => {
-	color.addEventListener('click', () => {
-		console.log(color);
-		user.color = color.style.backgroundColor;
-		input.style.color = user.color;
+const user = new User('', 'teal');
+accents.forEach((accent) => {
+	accent.addEventListener('click', () => {
+		console.log(accent);
+		user.accent = accent.style.backgroundColor;
+		input.style.color = user.accent;
 	});
 });
 

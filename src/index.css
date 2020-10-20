@@ -95,15 +95,22 @@ html {
 	transition: none;
 }
 
+#nick:focus {
+	outline: none;
+	box-shadow: 0px 0px 2px 2px #a55a05;
+}
+
 .accent-color {
 	text-align: center;
 }
-.accents-row {
+.accents-row,
+.colors-row {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 }
-.accent {
+.accent,
+.color {
 	width: 18px;
 	height: 18px;
 	border: solid 2px rgba(0, 0, 0, 0.5);
@@ -111,12 +118,14 @@ html {
 	margin: 0.5px;
 }
 
-.accent:hover {
+.accent:hover,
+.color:hover {
 	cursor: pointer;
 	transform: scale(1.1);
 }
 
-.accent:active {
+.accent:active,
+.color:active {
 	cursor: pointer;
 	transform: scale(0.9);
 }
