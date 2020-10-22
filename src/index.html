@@ -16,6 +16,7 @@
 					</div>
 				</div>
 				<div class="menu-container">
+					<div id="status"></div>
 					<div class="menu-name">
 						<label for="nick">Type your name</label
 						><input
@@ -103,78 +104,7 @@
 				</div>
 				<div class="board-n-hud">
 					<div id="game-details"></div>
-					<ul id="player-list" style="min-height: 0px">
-						<li>
-							<div class="player-details">
-								<span class="player-name">Wandering Flamingo</span>
-								<span class="player-score">0 points</span>
-							</div>
-							<span class="player-rank" style="color: #ffd700">#1</span>
-						</li>
-						<li>
-							<div class="player-details">
-								<span class="player-name">Wandering Flamingo</span>
-								<span class="player-score">0 points</span>
-							</div>
-							<span class="player-rank" style="color: #ffd700 !important"
-								>#1</span
-							>
-						</li>
-						<li>
-							<div class="player-details">
-								<span class="player-name">Wandering Flamingo</span>
-								<span class="player-score">0 points</span>
-							</div>
-							<span class="player-rank" style="color: #ffd700 !important"
-								>#1</span
-							>
-						</li>
-						<li>
-							<div class="player-details">
-								<span class="player-name">Wandering Flamingo</span>
-								<span class="player-score">0 points</span>
-							</div>
-							<span class="player-rank" style="color: #ffd700 !important"
-								>#1</span
-							>
-						</li>
-						<li>
-							<div class="player-details">
-								<span class="player-name">Wandering Flamingo</span>
-								<span class="player-score">0 points</span>
-							</div>
-							<span class="player-rank" style="color: #ffd700 !important"
-								>#1</span
-							>
-						</li>
-						<li>
-							<div class="player-details">
-								<span class="player-name">Wandering Flamingo</span>
-								<span class="player-score">0 points</span>
-							</div>
-							<span class="player-rank" style="color: #ffd700 !important"
-								>#1</span
-							>
-						</li>
-						<li>
-							<div class="player-details">
-								<span class="player-name">Wandering Flamingo</span>
-								<span class="player-score">0 points</span>
-							</div>
-							<span class="player-rank" style="color: #ffd700 !important"
-								>#1</span
-							>
-						</li>
-						<li>
-							<div class="player-details">
-								<span class="player-name">Wandering Flamingo</span>
-								<span class="player-score">0 points</span>
-							</div>
-							<span class="player-rank" style="color: #ffd700 !important"
-								>#1</span
-							>
-						</li>
-					</ul>
+					<ul id="player-list" style="min-height: 0px"></ul>
 					<div id="board">
 						<div class="current-word"></div>
 						<div class="game-canvas">
@@ -257,23 +187,7 @@
 						</div>
 						<div id="chat">
 							<div class="chat-body">
-								<ul id="chat-list">
-									<li>
-										<font color="gray">Jittery Plankton joined the room!</font>
-									</li>
-									<li>
-										<font color="orange">Free Draw!</font>
-									</li>
-									<li>
-										<font color="orange"
-											>Invite your friends to draw together!</font
-										>
-									</li>
-									<li>
-										<font color="#bbb"><b>Jittery Plankton: </b></font
-										><span>sdfsfsdfs</span>
-									</li>
-								</ul>
+								<ul id="chat-list"></ul>
 								<input
 									id="chat-input"
 									maxlength="100"
@@ -286,9 +200,12 @@
 				</div>
 			</div>
 		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+		<script src="connect.js"></script>
 		<script src="User.js"></script>
 		<script src="Tool.js"></script>
-		<script src="index.js"></script>
 		<script src="game.js"></script>
+		<script src="index.js"></script>
+		<script src="rooms.js"></script>
 	</body>
 </html>

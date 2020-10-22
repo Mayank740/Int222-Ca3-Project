@@ -129,10 +129,11 @@ dl {
 #player-list li {
 	position: relative;
 	display: flex;
+	overflow-y: visible;
 	height: 80px;
 	min-width: 205px;
 	max-width: 250px;
-	background: #28282b;
+	background: #ffffffb9;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 	padding: 10px 5px;
 	cursor: pointer;
@@ -146,7 +147,8 @@ dl {
 	float: right;
 	margin-left: 10px;
 	max-width: 150px;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: visible;
 }
 
 #player-list li:hover .player-details {
@@ -159,16 +161,21 @@ dl {
 
 .player-name {
 	display: block;
-	font-family: Nunito;
+	font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-weight: bold;
-	font-size: 13px;
+	font-size: 20px;
 	margin-top: 8px;
 	white-space: nowrap;
 	max-width: 125px;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: visible;
 	text-overflow: ellipsis;
 	user-select: none;
 	pointer-events: none;
+	text-shadow: #000 1px 0 0, #000 0.540302px 0.841471px 0,
+		#000 -0.416147px 0.909297px 0, #000 -0.989992px 0.14112px 0,
+		#000 -0.653644px -0.756802px 0, #000 0.283662px -0.958924px 0,
+		#000 0.96017px -0.279415px 0;
 }
 
 .player-score {
@@ -178,8 +185,13 @@ dl {
 	pointer-events: none;
 	white-space: nowrap;
 	max-width: 110px;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: visible;
 	text-overflow: ellipsis;
+	text-shadow: #000 1px 0 0, #000 0.540302px 0.841471px 0,
+		#000 -0.416147px 0.909297px 0, #000 -0.989992px 0.14112px 0,
+		#000 -0.653644px -0.756802px 0, #000 0.283662px -0.958924px 0,
+		#000 0.96017px -0.279415px 0;
 }
 
 .player-rank {
@@ -224,7 +236,7 @@ dl {
 }
 
 #canvas:hover {
-	cursor: var(--type), auto;
+	cursor: var(--type);
 }
 
 .chat-n-tools {
@@ -461,4 +473,9 @@ dl {
 	border-top-width: 0px;
 	border-top: 2px solid rgba(0, 0, 0, 0.25);
 	border-radius: 0 0 15px 0px;
+}
+
+#chat-input:focus {
+	outline: none;
+	box-shadow: 0 0 1px 1px black;
 }

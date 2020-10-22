@@ -11,3 +11,7 @@ dist/index.js.map
 dist
 cache
 .cache
+server/config.json
+server/index.js
+src/rooms.js
+.gitignore

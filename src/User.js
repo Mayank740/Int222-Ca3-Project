@@ -1,6 +1,8 @@
 const User = class {
-	constructor(name, color) {
+	constructor(name, accent) {
 		this.name = name;
-		this.color = color;
+		this.accent = accent;
+		this.score = 0;
+		this.rank = 0;
 	}
 };

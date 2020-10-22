@@ -23,8 +23,24 @@ const setBrush = function(size, color) {
 			size * boardsize +
 			'px\' stroke=\'black\' stroke-width=\'1px\' fill=\'' +
 			color +
-			'\' /%3E%3C/svg%3E ")',
+			'\' /%3E%3C/svg%3E ") ' +
+			r +
+			' ' +
+			r +
+			',auto',
 	);
+};
+
+const size = function() {
+	boardsize = getComputedStyle(board).width.slice(0, -2) / 800;
+	setBrush(tool.size / 2, tool.color);
+	slider.style.setProperty('--slider-size', tool.size * boardsize + 'px');
+	document
+		.querySelector('#player-list')
+		.style.setProperty('max-height', getComputedStyle(board).height);
+	document
+		.querySelector('#chat')
+		.style.setProperty('max-height', getComputedStyle(board).height);
 };
 
 colors.forEach((color) => {
@@ -45,19 +61,5 @@ toolSize.addEventListener('input', () => {
 
 window.onresize = function() {
 	console.log(boardsize);
-	boardsize = getComputedStyle(board).width.slice(0, -2) / 800;
-	setBrush(tool.size / 2, tool.color);
-	slider.style.setProperty('--slider-size', tool.size * boardsize + 'px');
-	document
-		.querySelector('#player-list')
-		.style.setProperty('max-height', getComputedStyle(board).height);
+	size();
 };
-
-setBrush(tool.size / 2, tool.color);
-slider.style.setProperty('--slider-size', tool.size * boardsize + 'px');
-document
-	.querySelector('#player-list')
-	.style.setProperty('max-height', getComputedStyle(board).height);
-document
-	.querySelector('#chat')
-	.style.setProperty('max-height', getComputedStyle(board).height);
