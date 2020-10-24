@@ -60,7 +60,7 @@
 							<div class="accent" style="background: #e38a5e"></div>
 							<div class="accent" style="background: #5e320d"></div>
 						</div>
-						<div class="accents-row">
+						<!-- <div class="accents-row">
 							<div class="accent black" style="background: #000"></div>
 							<div class="accent" style="background: #827c80"></div>
 							<div class="accent" style="background: #57060c"></div>
@@ -74,7 +74,7 @@
 							<div class="accent" style="background: #73314d"></div>
 							<div class="accent" style="background: #d1754e"></div>
 							<div class="accent" style="background: #421e06"></div>
-						</div>
+						</div> -->
 					</div>
 					<button
 						id="play"
@@ -103,10 +103,21 @@
 					</div>
 				</div>
 				<div class="board-n-hud">
-					<div id="game-details"></div>
+					<div id="game-details">
+						<h5 id="clock"></h5>
+						<h5 id="round" style="font-size: 15px; padding: 19px 0 0 1px"></h5>
+					</div>
 					<ul id="player-list" style="min-height: 0px"></ul>
 					<div id="board">
-						<div class="current-word"></div>
+						<div class="current-word">
+							<div id="game-container-sticky">
+								<div id="game-canvas-sticky">
+									<div id="game-content">
+										<p id="game-sticky"></p>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="game-canvas">
 							<div style="display: none"></div>
 							<canvas

@@ -1,8 +1,9 @@
 const slider = document.querySelector(':root');
 const colors = document.querySelectorAll('.color');
-const tool = new Tool('White', 18);
+const tool = new Tool('Black', 18);
 const toolSize = document.querySelector('#color-preview');
 const board = document.querySelector('#canvas');
+const clr = document.querySelector('#clear');
 let boardsize = getComputedStyle(board).width.slice(0, -2) / 800;
 
 console.log(toolSize);
@@ -57,6 +58,10 @@ toolSize.addEventListener('input', () => {
 	tool.size = toolSize.value;
 	slider.style.setProperty('--slider-size', tool.size * boardsize + 'px');
 	setBrush(tool.size / 2, tool.color);
+});
+
+clr.addEventListener('click', () => {
+	socket.emit('clear');
 });
 
 window.onresize = function() {

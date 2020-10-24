@@ -33,6 +33,12 @@ playbtn.addEventListener('click', () => {
 	}
 });
 
+input.addEventListener('keydown', (e) => {
+	if (e.key === 'Enter') {
+		playbtn.click();
+	}
+});
+
 createbtn.addEventListener('click', () => {
 	user.name = input.value.trim();
 	if (user.name) {

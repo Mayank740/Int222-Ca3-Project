@@ -87,6 +87,76 @@ dl {
 	border-top-right-radius: 15px;
 }
 
+#clock,
+#round {
+	background: #fff;
+	width: 55px;
+	height: 55px;
+	padding: 16px 0 0 0px;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	line-height: 1.2;
+	top: -12px;
+	left: 220px;
+	position: absolute;
+	font-size: 20px;
+	border-radius: 50%;
+	border: 3px solid #000;
+	color: #000;
+	font-family: Roboto;
+	font-weight: 700;
+	vertical-align: middle;
+	pointer-events: none;
+	user-select: none;
+	box-shadow: 3px 3px 6px rgba(33, 33, 33, 0.2);
+}
+
+h5#round {
+	right: 260px;
+	left: initial;
+}
+
+#clock::after {
+	position: absolute;
+	top: -1px;
+	bottom: -1px;
+	left: -1px;
+	right: -1px;
+	border: 2px solid #333;
+	border-radius: 50%;
+	z-index: 6;
+	font-family: Nunito;
+	font-size: 12px;
+	padding: 7px 0 0 1px;
+	color: #000;
+	content: 'Time';
+}
+#clock::before {
+	position: absolute;
+	top: -1px;
+	bottom: -1px;
+	left: -1px;
+	right: -1px;
+	border: 5px solid #a90101;
+	border-radius: 50%;
+	content: '';
+}
+#round::after {
+	position: absolute;
+	top: -1px;
+	bottom: -1px;
+	left: -1px;
+	right: -1px;
+	border: 4px solid #333;
+	border-radius: 50%;
+	z-index: 6;
+	font-family: Nunito;
+	font-size: 11px;
+	padding: 7px 0 0 1px;
+	color: #000;
+	content: 'Round';
+}
 #player-list {
 	display: flex;
 	order: 0;
@@ -151,8 +221,15 @@ dl {
 	overflow-y: visible;
 }
 
+.player-name::after {
+	content: var(--current);
+	color: red;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
 #player-list li:hover .player-details {
-	transform: scale(1.05);
+	transform: scale3d(1.02, 1.02, 2.1);
 }
 
 #player-list li:active .player-details {
@@ -172,10 +249,7 @@ dl {
 	text-overflow: ellipsis;
 	user-select: none;
 	pointer-events: none;
-	text-shadow: #000 1px 0 0, #000 0.540302px 0.841471px 0,
-		#000 -0.416147px 0.909297px 0, #000 -0.989992px 0.14112px 0,
-		#000 -0.653644px -0.756802px 0, #000 0.283662px -0.958924px 0,
-		#000 0.96017px -0.279415px 0;
+	text-shadow: #000 1px 1px 1px, #000 -0.653644px -0.756802px 1px;
 }
 
 .player-score {
@@ -188,10 +262,7 @@ dl {
 	overflow-x: hidden;
 	overflow-y: visible;
 	text-overflow: ellipsis;
-	text-shadow: #000 1px 0 0, #000 0.540302px 0.841471px 0,
-		#000 -0.416147px 0.909297px 0, #000 -0.989992px 0.14112px 0,
-		#000 -0.653644px -0.756802px 0, #000 0.283662px -0.958924px 0,
-		#000 0.96017px -0.279415px 0;
+	text-shadow: #000 1px 1px 1px, #000 -0.653644px -0.756802px 1px;
 }
 
 .player-rank {
@@ -233,6 +304,8 @@ dl {
 	image-rendering: smooth;
 	image-rendering: -o-crisp-edges;
 	image-rendering: pixelated;
+	z-index: 1;
+	position: relative;
 }
 
 #canvas:hover {
@@ -478,4 +551,99 @@ dl {
 #chat-input:focus {
 	outline: none;
 	box-shadow: 0 0 1px 1px black;
+}
+
+.current-word {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	z-index: 7;
+	background-color: #16315379;
+	transition: opacity 0.1s ease-in-out;
+}
+
+#game-container-sticky {
+	position: absolute;
+	margin-top: 45px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 7;
+	font-size: 16px;
+	font-family: Roboto;
+	transition: all 0.3s ease-in-out;
+}
+#game-container-sticky.word {
+	margin-top: -45px;
+}
+
+#game-canvas-sticky {
+	top: -2px;
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	white-space: nowrap;
+	color: #000;
+}
+
+#game-content {
+	height: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	box-shadow: 3px 3px 6px rgba(33, 33, 33, 0.5);
+	background: rgb(233, 192, 8);
+	border: 2px solid #cfb06c;
+	border-radius: 10px;
+}
+
+#game-sticky {
+	position: relative;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 1px;
+	font-family: Roboto;
+	text-align: center;
+	line-height: 1.5;
+}
+#game-sticky b {
+	font-size: 25px;
+	display: block;
+	text-align: center;
+	font-family: Roboto;
+}
+#game-sticky button {
+	display: inline-block;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	background: #ff9823 !important;
+	margin-top: 10px;
+	font-weight: 900;
+	color: #1b1b1b;
+	font-size: 16px;
+	padding: 10px;
+	min-width: 80px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+#game-sticky button:hover {
+	transform: scale(1.05);
+}
+
+#game-sticky button:active {
+	transform: scale(0.95);
+}
+
+#game-sticky font {
+	color: #000;
+	letter-spacing: 6px;
+	margin-left: 5px;
+	user-select: none;
+	pointer-events: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
